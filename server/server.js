@@ -15,7 +15,7 @@ app.use('/uploads', express.static('uploads'));
 
 
 const IP = process.env.SERVER_IP || 'localhost';
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 const AES_SECRET = process.env.AES_SECRET || "your_aes_key_here";
 const SALT = process.env.SALT || "your_salt_here";
