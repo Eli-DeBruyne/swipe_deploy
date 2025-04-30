@@ -25,7 +25,7 @@ const PYTHON_API_HOST = process.env.PYTHON_API_HOST || "localhost";
 const PYTHON_API_PORT = process.env.PYTHON_API_PORT || 5000;
 const pythonApiUrl = `http://${PYTHON_API_HOST}:${PYTHON_API_PORT}/match`;
 
-app.listen(PORT, IP, () => console.log(`Server running on http://${IP}:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // Connect to MongoDB (Single Connection)
 if (!process.env.MONGO_URI) {
@@ -1504,7 +1504,4 @@ app.get('/swipes/history', verifyToken, async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
-// Start Express Server (Only One `app.listen`)
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
